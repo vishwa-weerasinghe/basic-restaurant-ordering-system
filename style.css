@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    line-height: 1.6;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #2d3436;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+/* Card-based layout containers */
+.menu-section, .cart-section {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    flex: 1;
+    max-width: 700px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    text-align: left;
+    background-color: #f1f3f5;
+    color: #495057;
+    padding: 12px 15px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f3f5;
+    font-size: 0.95rem;
+}
+
+tr:hover {
+    background-color: #fdfdfd;
+}
+
+/* Inputs & Buttons */
+input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="number"]:focus {
+    border-color: #0d6efd;
+}
+
+button[name="add_to_cart"] {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button[name="add_to_cart"]:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+/* Cart Specific Styles */
+.total-row {
+    background-color: #f8f9fa;
+}
+
+.total-price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #198754;
+}
+
+.remove-link {
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.remove-link:hover {
+    text-decoration: underline;
+}
+
+.btn-checkout {
+    display: block;
+    width: 100%;
+    background-color: #198754;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-checkout:hover {
+    background-color: #157347;
+}
