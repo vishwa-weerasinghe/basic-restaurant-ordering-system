@@ -4,6 +4,18 @@
     padding: 0;
 }
 
+@media (max-width: 900px) {
+    body {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    .menu-section, .cart-section {
+        width: 100%;            
+        max-width: 100%;        
+    }
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: #f8f9fa;
@@ -23,7 +35,6 @@ h2 {
     padding-bottom: 10px;
 }
 
-/* Card-based layout containers */
 .menu-section, .cart-section {
     background: #ffffff;
     border-radius: 12px;
@@ -33,7 +44,7 @@ h2 {
     max-width: 700px;
 }
 
-/* Table Styling */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -60,7 +71,7 @@ tr:hover {
     background-color: #fdfdfd;
 }
 
-/* Inputs & Buttons */
+
 input[type="number"] {
     width: 60px;
     padding: 8px;
@@ -90,7 +101,7 @@ button[name="add_to_cart"]:hover {
     transform: translateY(-1px);
 }
 
-/* Cart Specific Styles */
+
 .total-row {
     background-color: #f8f9fa;
 }

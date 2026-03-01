@@ -6,7 +6,10 @@ $menu_result=$conn->query($menu_sql);
 $cart_sql = "SELECT cart.order_id, food_items.food_id, food_items.name, food_items.price, cart.quantity, cart.subtotal FROM cart JOIN food_items ON cart.food_id = food_items.food_id";
 $cart_result=$conn->query($cart_sql);
 
-
+$total_sql = "SELECT SUM(cart.subtotal) AS grand_total FROM cart";
+$total_result = $conn->query($total_sql);
+$total_row = $total_result->fetch_assoc();
+$grand_total = $total_row['grand_total'] ?? 0;
 
 ?>
 
@@ -19,7 +22,7 @@ $cart_result=$conn->query($cart_sql);
 <body>
     <div class="menu-section">
         <h2>🍴 Menu</h2>
-        <table border="1" cellpadding="10" cellspacing="0">
+        <table>
             <tr>
                 <th>Name</th>
                 <th>Category</th>
@@ -44,7 +47,7 @@ $cart_result=$conn->query($cart_sql);
         </div>
     <div class="cart-section">
         <h2>🛒 Your Cart</h2>
-        <table border="1" cellpadding="10" cellspacing="0">
+        <table >
             <tr>
                 <th>Name</th>
                 <th>Quantity</th>
@@ -58,7 +61,15 @@ $cart_result=$conn->query($cart_sql);
                 <td><?php echo $row['subtotal']?></td>
                 <td><a href="delete.php?id=<?php echo $row['order_id']; ?>" style="background-color: #ff4757; color: white; padding: 5px 10px; border-radius: 4px; text-decoration: none; font-size: 12px;" onclick="return confirm('Remove this item?');">Remove</a></td>
             <?php endwhile; ?>
+            <tr class="total-row">
+                <td colspan="2"><strong>Grand Total</strong></td>
+                <td class="total-price">Rs. <?php echo number_format($grand_total, 2); ?></td>
+                <td></td>
+            </tr>
         </table>
-        </div>  
+        <button class="btn-checkout" onclick="alert('Proceeding to checkout!')">
+            ✓ Checkout
+        </button>
+    </div>  
 </body>
 </html>
